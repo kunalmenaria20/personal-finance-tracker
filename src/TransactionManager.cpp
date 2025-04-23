@@ -1,8 +1,19 @@
 #include "TransactionManager.h"
 #include <iostream>
 using namespace std;
-void TransactionManager:: addTransaction(const Transaction& t){
+void TransactionManager:: addTransaction(Transaction& t){
+    // for(const auto& tr : transactions) {
+    //     if(tr.getId()==t.getId()){
+    //         cout<<"Error: Transaction with ID "<<t.getId()<<" already exist.\n";
+    //         return;
+    //     }
+        
+    // };
+    t.setId(nextTransactionId++);
     transactions.push_back(t);
+
+    cout<<"Transaction added successfully.\n";
+    
 }
 void TransactionManager::deleteTransactionByID(int to_deleteId){
     bool found= false;
@@ -10,11 +21,12 @@ void TransactionManager::deleteTransactionByID(int to_deleteId){
         if(it->getId()==to_deleteId){
         transactions.erase(it);
         found=true;
-        cout<<"Transaction successfully deleted.";
+        cout<<"Transaction successfully deleted.\n";
+        break;
         }
     }
     if(found==false){
-        cout<<"Invalid Transaction ID"<<endl;
+        cout<<"no transaction found with ID: "<<to_deleteId<<"\n";
     }
 }
 void TransactionManager::displayAllTransactions() const{
@@ -23,16 +35,19 @@ void TransactionManager::displayAllTransactions() const{
     cout<<endl;
 }
 }
-void TransactionManager::searchTransactionByID(int id){
-for(auto it=transactions.begin();it!=transactions.end();++it){
-    bool found=false;
-    if (it->getId() == id) {
-        cout << "Transaction found:\n";
-        it->displayTransaction();
+void TransactionManager::searchTransactionByID(int id) {
+    bool found = false;
+    for (const auto& t : transactions) {
+        if (t.getId() == id) {
+            std::cout << "Transaction found:\n";
+            t.displayTransaction();
+            found = true;
+            break;            //  break after finding one
+        }
     }
     if(found==false){
-        cout<<"no transaction found";
-    }
+        cout<<"no transaction found with ID: "<<id<<"\n";
+    
 }
 }
 

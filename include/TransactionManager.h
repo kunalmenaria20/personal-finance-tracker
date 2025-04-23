@@ -6,9 +6,10 @@ using namespace std;
 class TransactionManager {
     private:
     vector<Transaction> transactions;
+    int nextTransactionId=1;
     public:
     
-    void addTransaction(const Transaction& t);
+    void addTransaction(Transaction& t);
     void displayAllTransactions() const;
     void deleteTransactionByID(int to_deleteId);
     void searchTransactionByID(int id);

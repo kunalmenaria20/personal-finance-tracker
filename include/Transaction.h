@@ -11,8 +11,9 @@ private:
     std::string type;
 
 public:
-    Transaction(int tId, const std::string& tDate, double tAmt, const std::string& tCatg, const std::string& tType);
+    Transaction(const std::string& tDate, double tAmt, const std::string& tCatg, const std::string& tType);
     void displayTransaction() const;
-    int getId();
+    int getId()const;
+    void setId(int newId);
 };
 #endif
