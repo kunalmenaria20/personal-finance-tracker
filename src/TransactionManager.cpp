@@ -2,13 +2,6 @@
 #include <iostream>
 using namespace std;
 void TransactionManager:: addTransaction(Transaction& t){
-    // for(const auto& tr : transactions) {
-    //     if(tr.getId()==t.getId()){
-    //         cout<<"Error: Transaction with ID "<<t.getId()<<" already exist.\n";
-    //         return;
-    //     }
-        
-    // };
     t.setId(nextTransactionId++);
     transactions.push_back(t);
 
@@ -30,6 +23,10 @@ void TransactionManager::deleteTransactionByID(int to_deleteId){
     }
 }
 void TransactionManager::displayAllTransactions() const{
+    if(transactions.empty()==true){
+        cout<<"No Transactions Found";
+        return;
+    }
     for(const Transaction&t :transactions){    //iteration in the transcation to get to the every element//
     t.displayTransaction();
     cout<<endl;

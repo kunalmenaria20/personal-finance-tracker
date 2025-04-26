@@ -13,7 +13,7 @@ int main() {
     manage.addTransaction(t4);
     manage.displayAllTransactions();
     manage.deleteTransactionByID(1);
-    manage.searchTransactionByID(1);
+    manage.searchTransactionByID(5);
     manage.displayAllTransactions();
     manage.searchTransactionByID(2);
     return 0;
