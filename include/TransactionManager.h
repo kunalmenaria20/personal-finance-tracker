@@ -13,6 +13,12 @@ class TransactionManager {
     void displayAllTransactions() const;
     void deleteTransactionByID(int to_deleteId);
     void searchTransactionByID(int id);
+    void saveTransactionsToCSV(const string& filename) const ;
+    void loadTransactionsFromCSV(const string& filename);
+    void filterByCategory(const string& category) const;
+    void filterByType(const string& type) const;
+    void overallSummary() const;
+
 };
 
 #endif

@@ -1,19 +1,26 @@
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
 #include <string>
-
+#include <fstream>
+using namespace std;
 class Transaction {
 private:
     int id;
-    std::string date;
+    string date;
     double amount;
-    std::string category;
-    std::string type;
+    string category;
+    string type;
 
 public:
-    Transaction(const std::string& tDate, double tAmt, const std::string& tCatg, const std::string& tType);
+    Transaction(const string& tDate, double tAmt, const string& tCatg, const string& tType);
     void displayTransaction() const;
     int getId()const;
     void setId(int newId);
+    string toCSV() const;
+    Transaction static fromCSV(const string& line);
+    string getCategory() const;
+    string getType()const;
+    double getAmount() const;
+
 };
 #endif
