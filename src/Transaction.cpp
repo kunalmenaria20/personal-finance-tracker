@@ -1,31 +1,32 @@
 #include "Transaction.h"
-#include <iostream>
-#include <sstream>
-#include <string>
-using namespace std;
 
-Transaction::Transaction(const string& tDate, double tAmt, const string& tCatg, const string& tType)
-    :date(tDate), amount(tAmt), category(tCatg), type(tType) {}                                         //constructor
+Transaction::Transaction(const string &tDate, double tAmt, const string &tCatg, const string &tType)
+    : date(tDate), amount(tAmt), category(tCatg), type(tType) {} // constructor
 
-void Transaction::displayTransaction() const {
-    cout << "Id: " << id << " || "<< "Date: " << date << " || "<< "Amount: " << amount << " || "
-        << "Category: " << category << " || "<< "Type: " << type << endl;
+void Transaction::displayTransaction() const
+{
+    cout << "Id: " << id << " || " << "Date: " << date << " || " << "Amount: " << amount << " || "
+        << "Category: " << category << " || " << "Type: " << type << endl;
 }
-int Transaction::getId() const{
+int Transaction::getId() const
+{
     return id;
 }
-void Transaction::setId(int newId){
-    id=newId;
+void Transaction::setId(int newId)
+{
+    id = newId;
 }
-string Transaction::toCSV() const {
+string Transaction::toCSV() const
+{
     stringstream ss;
-    ss << id << ","  << date << "," << amount << "," << category << "," << type;
+    ss << id << "," << date << "," << amount << "," << category << "," << type;
     return ss.str();
 }
-Transaction Transaction::fromCSV(const string& line) {
+Transaction Transaction::fromCSV(const string &line)
+{
     stringstream ss(line);
     string item;
-    Transaction t("", 0.0, "", "");  // temporary default values
+    Transaction t("", 0.0, "", ""); // temporary default values
 
     getline(ss, item, ',');
     t.setId(stoi(item));
@@ -44,13 +45,15 @@ Transaction Transaction::fromCSV(const string& line) {
 
     return t;
 }
-string Transaction::getCategory() const {
+string Transaction::getCategory() const
+{
     return category;
 }
-string Transaction::getType() const {
+string Transaction::getType() const
+{
     return type;
 }
-double Transaction::getAmount()const{
+double Transaction::getAmount() const
+{
     return amount;
 }
-

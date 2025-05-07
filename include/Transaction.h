@@ -2,8 +2,13 @@
 #define TRANSACTION_H
 #include <string>
 #include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+
 using namespace std;
-class Transaction {
+class Transaction
+{
 private:
     int id;
     string date;
@@ -12,15 +17,14 @@ private:
     string type;
 
 public:
-    Transaction(const string& tDate, double tAmt, const string& tCatg, const string& tType);
+    Transaction(const string &tDate, double tAmt, const string &tCatg, const string &tType);
     void displayTransaction() const;
-    int getId()const;
+    int getId() const;
     void setId(int newId);
     string toCSV() const;
-    Transaction static fromCSV(const string& line);
+    Transaction static fromCSV(const string &line);
     string getCategory() const;
-    string getType()const;
+    string getType() const;
     double getAmount() const;
-
 };
 #endif
