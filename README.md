@@ -1,6 +1,6 @@
 # Personal Finance Tracker
 
-📊 A simple command-line based personal finance tracker built in C++ using CMake.  
+📊 A command-line based personal finance tracker built in C++ using CMake.  
 Track your expenses, income, and manage your finances easily from your terminal.
 
 > 🚧 **This project is currently in development.** More features and improvements will be added soon!
