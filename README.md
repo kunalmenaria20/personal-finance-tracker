@@ -17,10 +17,10 @@ CMakeLists.txt # CMake build configuration
 ## ✅ Planned Features
 
 - [x] Track income and expenses
-- [ ] Filter by category/date
-- [ ] View summaries (daily/monthly)
-- [ ] Import/export CSV data
-- [ ] Add basic CLI UI enhancements
+- [x] Filter by category/date
+- [x] View summaries
+- [x] Import/export CSV data
+- [x] Add basic CLI UI enhancements
 - [ ] (Future) Add GUI using Qt or similar
 
 ---
